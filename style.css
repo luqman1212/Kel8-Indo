@@ -1,0 +1,262 @@
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url('pho\ 1.jpeg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+.overlay {
+    background: linear-gradient(rgba(189, 127, 127, 0.564), rgba(0, 0, 0, 0.7));
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    z-index: 20;
+}
+
+.nav-link {
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1d4ed8;
+}
+
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    background: white;
+    position: absolute;
+    right: 16px;
+    top: 60px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 12px 0;
+    border-radius: 8px;
+    z-index: 20;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger-btn {
+        display: block;
+    }
+    .mobile-menu {
+        display: none;
+    }
+    .mobile-menu.active {
+        display: flex;
+    }
+    .container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+    }
+    .hamburger-btn,
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+.section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: rgb(211, 192, 192);
+    margin-bottom: 24px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.card {
+    background-color: rgb(204, 179, 179);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.prose {
+    max-width: none;
+    color: #1f2937;
+}
+
+.prose p {
+    margin-bottom: 16px;
+}
+
+.prose .text-right {
+    text-align: right;
+}
+
+.prose ul.list-disc {
+    list-style-type: disc;
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+.prose hr.divider {
+    margin: 16px 0;
+    border: 0;
+    border-top: 1px solid #efeff1;
+}
+
+.prose .name {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.prose .section-subtitle {
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.download-btn {
+    margin-top: 16px;
+    background-color: #3c3e44;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #1d4ed8;
+}
+
+.cv-section {
+    background-color: rgba(229, 231, 235, 0);
+}
+
+.footer {
+    background-color: #1f2937;
+    color: white;
+    padding: 24px;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .download-btn {
+        width: 100%;
+    }
+
+    .container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media (min-width: 640px) {
+    .download-btn {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
