@@ -18,3 +18,13 @@ document.querySelectorAll('.smooth-scroll').forEach(anchor => {
         document.getElementById('mobile-menu').classList.remove('active');
     });
 });
+
+// Fungsi untuk membuka pop-up
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = 'flex';
+}
+
+// Fungsi untuk menutup pop-up
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
+}
