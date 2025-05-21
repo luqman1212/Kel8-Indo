@@ -1,9 +1,12 @@
 body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: url('pho\ 1.jpeg');
     background-size: cover;
     background-position: center;
     margin: 0;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 .overlay {
@@ -32,6 +35,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -66,29 +70,28 @@ body {
     display: none;
     background: none;
     border: none;
-    color: #4b5563;
     cursor: pointer;
-}
-
-.hamburger-icon {
-    width: 24px;
-    height: 24px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .mobile-menu {
     display: none;
     flex-direction: column;
-    gap: 12px; /* Meningkatkan jarak antar item */
+    gap: 12px;
     background: white;
     position: absolute;
     right: 16px;
     top: 60px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 16px; /* Memperbesar padding */
+    padding: 16px;
     border-radius: 8px;
     z-index: 20;
-    border: 1px solid #efeff1; /* Menambahkan border */
-    min-width: 150px; /* Memperbesar lebar kotak */
+    border: 1px solid #efeff1;
+    min-width: 150px;
 }
 
 .mobile-menu.active {
@@ -103,6 +106,10 @@ body {
     .hamburger-btn {
         display: block;
     }
+    .hamburger-btn::before {
+        font-size: 20px; /* Sesuaikan ukuran ikon untuk mobile */
+        color: #4b5563;
+    }
     .mobile-menu {
         display: none;
     }
@@ -112,6 +119,36 @@ body {
     .container {
         padding-left: 8px;
         padding-right: 8px;
+    }
+    body {
+        font-size: 14px;
+    }
+    .logo {
+        font-size: 1.25rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .card {
+        padding: 16px;
+    }
+    .prose {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .prose p {
+        margin-bottom: 12px;
+    }
+    .prose ul.list-disc {
+        margin-left: 16px;
+        padding-left: 12px;
+    }
+    .prose ul.list-disc li {
+        margin-bottom: 8px;
+    }
+    .download-btn {
+        padding: 6px 16px;
+        font-size: 14px;
     }
 }
 
@@ -146,7 +183,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: translateY(0);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; /* Menambahkan cursor pointer agar terlihat bisa diklik */
+    cursor: pointer;
 }
 
 .card:hover {
@@ -163,6 +200,7 @@ body {
 .prose {
     max-width: none;
     color: #1f2937;
+    line-height: 1.5;
 }
 
 .prose p {
@@ -256,6 +294,28 @@ body {
     position: relative;
 }
 
+.popup-content .prose {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.popup-content .prose p {
+    margin-bottom: 12px;
+}
+
+.popup-content .prose .text-right {
+    text-align: right;
+}
+
+.popup-content .prose ul.list-disc {
+    margin-left: 16px;
+    padding-left: 12px;
+}
+
+.popup-content .prose ul.list-disc li {
+    margin-bottom: 8px;
+}
+
 .close-btn {
     position: absolute;
     top: 10px;
@@ -265,35 +325,13 @@ body {
     color: #1f2937;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger-btn {
-        display: block;
-    }
-
-    .download-btn {
-        width: 100%;
-    }
-
-    .container {
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-}
-
-@media (min-width: 640px) {
-    .download-btn {
-        width: auto;
-    }
-}
-
+/* Responsive Styles untuk Desktop */
 @media (min-width: 1024px) {
     .container {
         padding-left: 32px;
         padding-right: 32px;
+    }
+    .download-btn {
+        width: auto;
     }
 }
